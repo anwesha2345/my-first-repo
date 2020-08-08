@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>Socket.io Chat Application</title>
+
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/spark.css"/>
+
+    </head>
+
+    <body>
+
+        <div id="mario-chat">
+
+            <div id="chat-window">
+
+                <div id="output"></div>
+
+                <div id="feedback"></div>
+
+            </div>
+        
+            <input id="handle" type="text" placeholder="Handle"/>
+
+            <input id="message" type="message" placeholder="Message"/>
+        
+            <button id="send">Send</button>
+
+        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script>
+            var socket = io.connect('http://localhost:3200');
+             socket.on('connect', function(data) {
+                socket.emit('join', 'Hello World from client');
+             });
+
+             var message = document.getElementById("message");
+
+             var handle = document.getElementById("handle");
+
+             var btn =  document.getElementById("send");
+
+             var output = document.getElementById("output");
+
+             var feedback = document.getElementById("feedback");
+
+             btn.addEventListener("click",function(){
+                socket.emit("chat",{
+                    message:message.value,
+                    handle:handle.value
+                });
+                    if(message){
+                        var messages = message.value;
+                    }
+                    if(handle){
+                        var handle_name = handle.value;
+                        console.log(handle_name)
+                    }
+
+                    $.ajax({
+                        type:'POST',
+                        url:'/create-chat-details',
+                        data:{
+                                message:messages,
+                                handle:handle_name
+                        },
+                        success:function(response){
+                            console.log(response)
+                        }
+                    })
+             });
+
+             message.addEventListener("keypress", function(){
+                socket.emit("typing" , handle.value);
+             }); 
+
+             socket.on("chat", function(data){
+                //feedback.innerHTML = "";
+                output.innerHTML += '<p><strong>' + data.handle + ':</strong>'+
+                data.message + '</p>';
+             });
+
+             socket.on("typing", function(data){
+                    feedback.innerHtml = '<p><em>' + data + 'is typing a message ... </em> </p>';
+                });
+
+
+        </script>
+
+    </body>
+
+</html>

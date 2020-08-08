@@ -1,0 +1,96 @@
+.card {
+    position: absolute;
+    display: -webkit-box;
+    top: 20;
+    left: 50;
+    height: 170;
+    width: 20;
+    display: -ms-flexbox;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #f8f9fa;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .50rem;
+    width: 700;
+    padding-right: inherit;
+}
+
+
+textarea {
+    overflow: auto;
+    resize: vertical;
+    margin-left: 30;
+    margin-top: 10;
+    width: 650;
+    height: 121px;
+}
+
+#outer
+{
+    width:100%;
+    text-align: center;
+}
+.inner
+{
+    display: inline-block;
+    position: fixed;
+}
+
+.chat-card{
+    position: relative;
+    display: -webkit-box;
+    top: 200;
+    left: 50;
+    height: 170;
+    width: 20;
+    display: -ms-flexbox;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #f8f9fa;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .50rem;
+    width: 700;
+    padding-right: inherit;
+}
+
+.fa-twitter-square{
+    height: 100;
+}
+
+
+#outer1
+{
+    width:100%;
+    text-align: center;
+}
+.inner1
+{
+    display: inline-block;
+    
+}
+
+
+.card-teacher {
+    width: 800;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+    background-color: aqua;
+    height: 200;
+    margin-top: 50;
+    margin-left: 50;
+    position: relative;
+}
+
+.card {
+    width: 900;
+    height: 200;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+    position: absolute;
+}

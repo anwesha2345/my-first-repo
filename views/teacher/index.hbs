@@ -1,0 +1,213 @@
+        
+           <head>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+            <link rel="stylesheet" href="css/light.css">
+           </head>
+           <!-- <link rel="stylesheet" href="css/spark.css"> -->
+           
+          
+            <div class="tab-pane tabDiv6" id="tab6Experience">
+                        <div class="card card-transparent">
+                       <div class="card-body">
+                           
+                <form role="form" class="addTeacherForm" > 
+             
+                        <div class="" >
+                            <div class="row well p-2 m-b-25" style="position:relative;">   
+                                <!-- <button id="caseRowRemoveBtn" class="btn btn-danger removeCaseBtn" type="button">
+                                    <i class="fa fa-close"></i>
+                                </button> -->
+                                <input type="hidden" name="teacher_id" id="teacher_id" value="">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Teachers Name</label>
+                                        <span class="requiredErr">*</span>
+                                        <input type="text" class="form-control teacher_name" name="teacher_name" id="teacher_name"
+                                            placeholder="Enter teacher_name" value="" >
+                                    </div>
+                                </div>
+                                 <div class="col-md-4">
+                                     <div class="form-group">
+                                            <label>email</label>
+                                            <span class="requiredErr">*</span>
+                                            <div class="">
+                                                <input type="email" class="form-control email" name="email" id="email"
+                                                    placeholder="Select Starting Date" >
+                                                
+                                            </div>
+                                        </div>
+                                    
+                                </div>
+                                <div class="col-md-4">
+                                     <div class="form-group">
+                                            <label>Password</label>
+                                            <span class="requiredErr">*</span>
+                                            <div class="">
+                                                <input type="password" class="form-control password" name="password" id="password"
+                                                    placeholder="Enter password" value="">
+                                                
+                                            </div>
+                                        </div>
+                                    </div> 
+
+                                <div class="col-md-4">
+                                     <div class="form-group">
+                                            <label>Class Choice</label>
+                                            <span class="requiredErr">*</span>
+                                            <select class="full-width  chooseClass" data-init-plugin="select2" id="chooseClass" name="chooseClass[]" multiple >
+                                            <option>Select Class</option> 
+                                            {{#each view_class}} 
+                                            <option value="{{this.id}}">{{this.name}}
+                                            </option>
+                                            {{/each}}
+                                            </select>
+                                        </div>
+                                    </div>   
+                            </div>
+                        </div>    
+
+               
+                </form>
+                    <div class="text-center m-auto">
+                        <button class="btn btn-primary btn-cons m-t-10" type="button" id="TeacherFormSubmit">
+                            <i class="fa fa-plus"></i> Add Teachers</button>
+                        <button class="btn btn-primary btn-cons m-t-10" type="button" id="addTeachersFormBtn">
+                            <i class="fa fa-plus"></i> Add Row</button>
+                    </div>
+               
+               
+            
+            <div id="addTeachersForm1Btn" style="display:none;">
+                <div class="row well p-2 m-b-25" style="position:relative;">
+                        <button id="caseRowRemoveBtn" class="btn btn-danger removeCaseBtn" type="button">
+                            <i class="fa fa-close"></i>
+                        </button>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Teacher name</label>
+                                    <span class="requiredErr">*</span>
+                                    <input type="text" class="form-control mmmm teacher_name" name="teacher_name" id="teacher_name"
+                                        placeholder="Enter Teacher name">
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                     <div class="form-group">
+                                            <label>email</label>
+                                            <span class="requiredErr">*</span>
+                                            <div class="">
+                                                <input type="email" class="form-control mmmm email" name="email" id="email"
+                                                    placeholder="Select email" >
+                                                
+                                            </div>
+                                        </div>
+                                   
+                                </div>
+                                <div class="col-md-4">
+                                     <div class="form-group">
+                                            <label>Password</label>
+                                            <span class="requiredErr">*</span>
+                                            <div class="">
+                                                <input type="password" class="form-control mmmm password" name="password" id="password"
+                                                    placeholder="Select address" >
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                     <div class="form-group">
+                                            <label>Class Choice</label>
+                                            <span class="requiredErr">*</span>
+                                            <select class="full-width mmmm chooseClass" data-init-plugin="select2" id="chooseClass" name="chooseClass" multiple >
+                                            <option>Select Class</option> 
+                                            {{#each view_class}} 
+                                            <option value="{{this.id}}">{{this.name}}
+                                            </option>
+                                            {{/each}}
+                                            </select>
+                                        </div>
+                                    </div>
+                              </div>
+                        </div>   
+        
+    </div>
+                              
+                </div>
+
+                    </div>
+
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+        <script type="text/javascript">
+
+            $(document).on("click","#addTeachersFormBtn", function(){
+                $(".addTeacherForm").append($("#addTeachersForm1Btn").html());
+            })
+
+            $(document).ready(function(){
+              $("#addExperienceFrm1Submit").hide();
+            })
+
+              $(document).on("click","#caseRowRemoveBtn", function(){
+                $(this).closest('.row').remove()
+              })
+
+
+              $(document).on("click", "#TeacherFormSubmit", function(){
+                    var teacher_name = $(".addTeacherForm .teacher_name")
+                    var teacher_email = $(".addTeacherForm .email")
+                    var teacher_address = $(".addTeacherForm .password")
+                    var teacher_class = $(".addTeacherForm .chooseClass")
+
+                    var name = []
+                    var email =[]
+                    var address = []
+                    var tea_class = []
+
+                    for(let i=0; i<teacher_name.length; i++){
+                        name.push($(teacher_name[i]).val())
+                    }
+
+                    for(let j =0 ; j<teacher_email.length; j++){
+                        email.push($(teacher_email[j]).val())
+                    }
+
+                    for(let k = 0; k<teacher_address.length; k++){
+                        address.push($(teacher_address[k]).val())
+                    }
+
+                    for(let l =0; l<teacher_class.length; l++){
+                        tea_class.push($(teacher_class[l]).val())
+                    }
+                    
+                    console.log(name)
+                    console.log(email)
+                    console.log(address)
+                    console.log(tea_class)
+
+                    $.ajax({
+                      type:'POST',
+                      url:'/create-teacher-details',
+                      data:{
+                        name:name,
+                        email:email,
+                        address:address,
+                        class_id:tea_class
+                      },
+                      success: function(response){
+                        console.log(response)
+                      }
+                    })
+
+              })
+        </script>
+             
+
+
+
+          
+
+

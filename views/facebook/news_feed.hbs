@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+        <link rel="stylesheet" href="css/light.css">
+
+
+    </head>
+    <body>  
+        <div class="row">
+        <div class="card">
+            <form role="role">
+                    <div class="newpst-input row">
+
+                    
+                    <div class="attachments">
+                        
+                        <textarea rows="4" placeholder="Write something..." name="my_feed" id="my_feed"></textarea>
+                        <div id="outer">
+                            <div class="inner"><input type="file" multiple><i class="fa fa-file-image-o" aria-hidden="true"></i></div>
+                            <div class="inner"><button type="btn btn-primary" ><i class="fa fa-paper-plane" ></i></button></div>
+                            
+                            
+                        </div>
+                    
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+
+         <div class="chat-card">
+            <form role="role">
+                    <div class="newpst-input row">
+
+                    
+                    <div class="attachments">
+                        
+                        <textarea rows="4" placeholder="Write something..." name="my_feed" id="my_feed" class="textAreas"></textarea>
+                            <div id="showComment"></div>
+                            <div id="outer1">
+                                <div class="inner1"><button type="button" class="btn btn-warning">Like</button></div>
+                                <div class="inner1"><button type="button" class="btn btn-warning" id="myComment">Comment</button></div>
+                                <div class="inner1"><button type="button" class="btn btn-warning">share</button></div>
+                            </div>
+                            
+                            
+                        
+                    
+                    </div>
+
+                </div>
+            </form>
+        </div>
+        </div>
+    </body>    
+</html>
+    
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script>
+            $(document).on("click","#myComment", function(){
+                $("#showComment").append(`<div id="replyMe">
+                    <input type="text"/><button type="button" class="btn btn-primary" id="replyDiv"></button>
+                    </div>`)
+            })
+
+            $(document).on("click","#replyDiv", function(){
+                $("#replyMe").append(`<div><input type="text"/><button type="button" class="btn btn-primary" id=""></button></div>`)
+            })
+        </script>
