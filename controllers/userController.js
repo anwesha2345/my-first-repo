@@ -72,7 +72,7 @@ var deleteData = async function(req,res,error){
 			}
 		})
 
-		res.status(200).json(delete_user)
+		res.status(200).json(delete_user);
 
 	}
 	catch(error){

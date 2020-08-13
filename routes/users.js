@@ -21,11 +21,7 @@ var chatUser = require("../models").chatUser;
 
 var ClassIssues = require('../models').classRelatedIssues;
 var Issues = require('../models').issues;
-
-const socket = require('socket.io')
-
-
-
+const socket = require('socket.io');
 var Teacher = require('../models').teacher;
 var ClassNames = require('../models').classesName;
 
@@ -61,8 +57,6 @@ router.get("/get-all-student", async(req,res)=>{
   })
 })
 
-
-
 router.get("/view-all-teacher-details", async(req,res)=>{
 	var view_class = await ClassNames.findAll({
 		attributes:['id','name']
@@ -71,19 +65,16 @@ router.get("/view-all-teacher-details", async(req,res)=>{
 		title:'View All Teacher Details',
 		view_class
 	})
-
 })
-
 
 router.get("/create-class", async(req,res)=>{
 	var class_name = ['LITTLE ANGEL','PRE KG','KG','I','II','III','IV',,'V','VI','VII','VIII','IX','X','XI','XII']
-
+	
 	for(let i =0; i<class_name.length; i++){
 		var create_class = await ClassNames.create({
 		name:class_name[i]
 		})	
 	}
-	
 	res.json({
 		success: true,
 		code:200
